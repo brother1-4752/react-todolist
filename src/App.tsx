@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function App() {
-  return <div>TEST</div>;
+  return <div>배포좀</div>;
 }
 
 export default App;
