@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atoms";
 
 function App() {
-  return <div>배포좀</div>;
+  const isDark = useRecoilValue(isDarkAtom);
+  return <>test</>;
 }
 
 export default App;
