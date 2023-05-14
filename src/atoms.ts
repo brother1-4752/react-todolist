@@ -1,6 +1,12 @@
 import { atom } from "recoil";
 
-export const isDarkAtom = atom({
-  key: "isDark",
-  default: false,
+interface IToDo {
+  text: string;
+  id: number;
+  catergory: "TODO" | "PENDING" | "DONE";
+}
+
+export const toDoState = atom<IToDo[]>({
+  key: "toDo",
+  default: [],
 });

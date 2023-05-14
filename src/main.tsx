@@ -10,5 +10,3 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     </RecoilRoot>
   </React.StrictMode>
 );
-
-// 위의 오류는 React코드에서 발생한 오류로, 해당 코드에서 createRoot
