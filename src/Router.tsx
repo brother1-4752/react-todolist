@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import ErrorBoundary from "./components/common/ErrorBoundary";
-import ToDoList from "./pages/toDoList/ToDoList";
 import { IRouter } from "./types/routerType";
+import { ToDoList } from "./pages/toDoList";
 
 const routerData: IRouter[] = [
   {
