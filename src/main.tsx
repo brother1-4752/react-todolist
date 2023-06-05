@@ -4,8 +4,7 @@ import { RecoilRoot } from "recoil";
 import { RouterProvider } from "react-router-dom";
 
 import "./styles/reset.css";
-
-import { router } from "./router";
+import router from "./router";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

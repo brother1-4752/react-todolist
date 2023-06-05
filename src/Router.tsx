@@ -14,4 +14,6 @@ const routerData: IRouter[] = [
   },
 ];
 
-export const router = createBrowserRouter(routerData);
+const router = createBrowserRouter(routerData);
+
+export default router;
