@@ -1,5 +1,6 @@
 import { useSetRecoilState } from "recoil";
-import { Categories, IToDo, toDoState } from "../../atoms/atoms";
+import { toDoState } from "../../atoms/atoms";
+import { ICategories, IToDo } from "../../types/category";
 
 export default function ToDo({ text, id, category }: IToDo) {
   const setToDos = useSetRecoilState(toDoState);
@@ -23,18 +24,18 @@ export default function ToDo({ text, id, category }: IToDo) {
     <li>
       <span>{text}</span>
 
-      {category !== Categories.DOING && (
+      {category !== ICategories.DOING && (
         <button name="DOING" onClick={onClick}>
           할 일
         </button>
       )}
 
-      {category !== Categories.PENDING && (
+      {category !== ICategories.PENDING && (
         <button name="PENDING" onClick={onClick}>
           보류
         </button>
       )}
-      {category !== Categories.DONE && (
+      {category !== ICategories.DONE && (
         <button name="DONE" onClick={onClick}>
           완료
         </button>
