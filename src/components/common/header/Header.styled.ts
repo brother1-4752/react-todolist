@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  width: 100%;
+  position: relative;
   height: 100px;
   margin: 30px;
 
@@ -9,6 +9,16 @@ const HeaderContainer = styled.header`
   flex-direction: column;
   align-items: start;
   justify-content: space-evenly;
+
+  .header__darkmode--btn {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    cursor: pointer;
+
+    font-size: 27px;
+  }
 
   .header__title {
     margin-bottom: 10px;
@@ -28,15 +38,15 @@ const HeaderContainer = styled.header`
       line-height: 30px;
       text-align: center;
 
-      background-color: #005bc5;
-      color: white;
+      background-color: ${(props) => props.theme.accecntColor};
+      color: ${(props) => props.theme.bgColor};
       border-radius: 10px;
       cursor: pointer;
 
       &:hover {
-        background-color: white;
-        color: #005bc5;
-        border: 1px solid #005bc5;
+        background-color: ${(props) => props.theme.bgColor};
+        color: ${(props) => props.theme.accecntColor};
+        border: 1px solid ${(props) => props.theme.accecntColor};
       }
     }
   }
