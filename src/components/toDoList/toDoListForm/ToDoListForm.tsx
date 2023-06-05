@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { categoryState, toDoState } from "../atoms/atoms";
 
-interface IForm {
-  toDo: string;
-}
+import { IForm } from "../../../types/form";
+import { categoryState, toDoState } from "../../../atoms/atoms";
+import ToDoListFormContainer from "./ToDoListForm.styled";
 
-export default function CreateToDo() {
+export default function ToDoListForm() {
   const setToDos = useSetRecoilState(toDoState);
   const category = useRecoilValue(categoryState);
   const { register, handleSubmit, setValue } = useForm<IForm>();
@@ -20,14 +19,15 @@ export default function CreateToDo() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onValid)}>
+    <ToDoListFormContainer onSubmit={handleSubmit(onValid)}>
       <input
+        className="form__input"
         {...register("toDo", {
-          required: "할 일을 작성해주세요.",
+          required: "⚡You Have to write TO DO",
         })}
-        placeholder="To Do..."
+        placeholder="⚡ To Do..."
       />
-      <button>추가</button>
-    </form>
+      <button className="form__submit--btn">🌊 Let's go</button>
+    </ToDoListFormContainer>
   );
 }
