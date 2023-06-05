@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   position: relative;
-  height: 100px;
+  height: 80px;
   margin: 30px;
 
   display: flex;
@@ -24,22 +24,27 @@ const HeaderContainer = styled.header`
     margin-bottom: 10px;
 
     font-size: 30px;
+    font-weight: bold;
   }
 
   .header__list {
-    width: 300px;
     height: 35px;
 
     display: flex;
     justify-content: space-between;
 
+    font-size: 18px;
+    font-weight: bold;
+
     .header__list__item {
-      width: 90px;
-      line-height: 30px;
+      line-height: 10px;
       text-align: center;
 
+      padding: 10px;
+      margin-right: 15px;
+
       background-color: ${(props) => props.theme.accecntColor};
-      color: ${(props) => props.theme.bgColor};
+      color: white;
       border-radius: 10px;
       cursor: pointer;
 
