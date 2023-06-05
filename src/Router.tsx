@@ -1,35 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
-import ErrorBoundary from "./components/ErrorBoundary";
-import ToDoList from "./components/ToDoList";
 
-interface IRouter {
-  id: number;
-  path: string;
-  element: React.ReactNode;
-  errorElement: React.ReactNode;
-}
+import { IRouter } from "./types/routerType";
+
+import App from "./App";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+import ToDoList from "./pages/toDoList/ToDoList";
 
 const routerData: IRouter[] = [
   {
-    id: 1,
     path: "/",
-    element: <ToDoList />,
+    element: <App />,
     errorElement: <ErrorBoundary />,
+    // children: [
+    //   {
+    //     path: "",
+    //     element: <ToDoList />,
+    //   },
+    // ],
   },
 ];
 
-export const router = createBrowserRouter(
-  routerData.map((routerInfo) => {
-    return {
-      // id property 넘기면 무조건 오류 발생한다.
-      // id : routerInfo.id
+const router = createBrowserRouter(routerData, {
+  basename: "/react-todolist/",
+});
 
-      path: routerInfo.path,
-      element: routerInfo.element,
-      errorElement: routerInfo.errorElement,
-    };
-  }),
-  {
-    basename: "/react-todolist/",
-  }
-);
+export default router;
