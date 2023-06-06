@@ -1,6 +1,6 @@
+import { markerData } from "../constants/markerData";
+
 export default function makeListMarker(x: number) {
-  if (x === 0) {
-    return "left: 15px; top: 15px;";
-  }
-  return "right:15px; top:15px;";
+  const filtered_marker = markerData.filter((marker) => marker.id === x);
+  return filtered_marker.length === 1 ? filtered_marker[0].path : "";
 }

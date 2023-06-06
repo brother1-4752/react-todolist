@@ -34,7 +34,7 @@ const ToDoListContainer = styled.div`
       border-radius: 50%;
     }
 
-    //nth-child 인자로 x같은거 넣을 수 있나?
+    //nth-child 인자로 x같은거 넣을 수 없을까..
     .todolist--marker:nth-child(1) {
       ${makeListMarker(0)}
     }
