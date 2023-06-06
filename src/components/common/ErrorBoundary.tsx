@@ -1,10 +1,19 @@
-export default function ErrorBoundary() {
-  return (
-    <div>
-      <h1> Error Report</h1>
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
-      {/* error.message 넣기 */}
-      <p> Error is occured, error.message</p>
-    </div>
-  );
+export default function ErrorBoundary() {
+  const error = useRouteError();
+
+  if (isRouteErrorResponse(error)) {
+    return (
+      <div>
+        <h1>Oops!</h1>
+        <h2>{error.status}</h2>
+        <p>{error.statusText}</p>
+
+        {error.data?.message && <p>{error.data.message}</p>}
+      </div>
+    );
+  } else {
+    return <div>OH NO😂</div>;
+  }
 }
