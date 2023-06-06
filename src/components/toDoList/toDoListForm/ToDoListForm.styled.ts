@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ToDoListFormContainer = styled.form`
-  width: 95%;
+  width: 100%;
 
   display: flex;
   /* justify-content: space-between; */
@@ -22,7 +22,7 @@ const ToDoListFormContainer = styled.form`
   }
 
   .form__submit--btn {
-    width: 90px;
+    width: 120px;
     height: 33px;
 
     background-color: ${(props) => props.theme.accecntColor};

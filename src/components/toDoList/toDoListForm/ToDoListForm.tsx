@@ -27,7 +27,7 @@ export default function ToDoListForm() {
         })}
         placeholder="⚡ To Do..."
       />
-      <button className="form__submit--btn">🌊 Let's go</button>
+      <button className="form__submit--btn">🌊 가자!</button>
     </ToDoListFormContainer>
   );
 }

@@ -1,7 +1,6 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
 import HeaderContainer from "./Header.styled";
 import { categoryState, darkModeState } from "../../../atoms/atoms";
-import { ICategories } from "../../../types/category";
 
 export default function Header() {
   const setCategory = useSetRecoilState(categoryState);
